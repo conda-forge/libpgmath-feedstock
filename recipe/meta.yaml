@@ -24,7 +24,7 @@ requirements:
     - clangxx     # [not osx]
     - llvm-tools  # [not osx]
     # TODO: Fix the lit conda package on windows
-    # - lit
+    - lit        # [not win]
     - jom        # [win]
     - posix      # [win]
     - m2-make    # [win]

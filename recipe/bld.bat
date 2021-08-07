@@ -17,7 +17,6 @@ cmake ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
   -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-  -DCMAKE_AR=%BUILD_PREFIX%\Library\bin\llvm-ar.exe ^
   -DPython3_EXECUTABLE=%BUILD_PREFIX%\python.exe ^
   ..
 
