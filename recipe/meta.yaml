@@ -1,19 +1,19 @@
 {% set name = "libpgmath" %}
-{% set version = "2019.08.01" %}
+{% set version = "2021.08.06" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/flang-compiler/flang/archive/7ab2da73bac1ab637210a6a78c167f7138512a99.tar.gz
-  sha256: e670ab95a01aea412a9a799aa98c724a7868a4627ab058d44dc8e5a9df781e15
-  patches:
-    - printf.diff
+  url: https://github.com/flang-compiler/flang/archive/95937565e4d111dccc4e7bd422dc43e7cd70d193.tar.gz
+  sha256: 122e971c9e6f371172c7fc222037edfbcc02a63ef26f815416f6207af43c0f0c
 
 build:
   number: 0
   skip: True  # [win and vc<14]
+  run_exports:
+    - {{ pin_subpackage("libpgmath", max_pin="x.x.x") }}
 
 requirements:
   build:
@@ -21,9 +21,10 @@ requirements:
     - {{ compiler('cxx') }}
     - python
     - pip
-    - clangxx   # [not osx]
+    - clangxx     # [not osx]
+    - llvm-tools  # [not osx]
     # TODO: Fix the lit conda package on windows
-    # - lit
+    - lit        # [not win]
     - jom        # [win]
     - posix      # [win]
     - m2-make    # [win]

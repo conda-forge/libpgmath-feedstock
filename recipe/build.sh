@@ -12,8 +12,6 @@ else
   export CONDA_BUILD_SYSROOT=$BUILD_PREFIX/$HOST/sysroot
 fi
 
-PIP_NO_INDEX= pip install lit
-
 cmake \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
