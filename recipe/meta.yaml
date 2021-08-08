@@ -10,7 +10,7 @@ source:
   sha256: 122e971c9e6f371172c7fc222037edfbcc02a63ef26f815416f6207af43c0f0c
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage("libpgmath", max_pin="x.x.x") }}
@@ -22,15 +22,13 @@ requirements:
     - python
     - pip
     - clangxx     # [not osx]
-    - llvm-tools  # [not osx]
-    # TODO: Fix the lit conda package on windows
-    - lit        # [not win]
+    - lit
     - jom        # [win]
     - posix      # [win]
     - m2-make    # [win]
     - cmake
   host:
-    - clangxx   # [osx]
+  run:
 
 test:
   commands:
