@@ -3,14 +3,8 @@ cd runtime/libpgmath
 mkdir build
 cd build
 
-if [[ $target_platform == "osx-64" ]]; then
-  export CC=$PREFIX/bin/clang
-  export CXX=$PREFIX/bin/clang++
-else
-  export CC=$BUILD_PREFIX/bin/clang
-  export CXX=$BUILD_PREFIX/bin/clang++
-  export CONDA_BUILD_SYSROOT=$BUILD_PREFIX/$HOST/sysroot
-fi
+export CC=$BUILD_PREFIX/bin/clang
+export CXX=$BUILD_PREFIX/bin/clang++
 
 cmake \
   -DCMAKE_BUILD_TYPE=Release \
