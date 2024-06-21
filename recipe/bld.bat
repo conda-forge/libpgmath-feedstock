@@ -9,9 +9,6 @@ set "CXX=clang-cl.exe"
 set "CFLAGS=%CFLAGS% -D_CRT_SECURE_NO_WARNINGS"
 set "CXXFLAGS=%CXXFLAGS% -D_CRT_SECURE_NO_WARNINGS"
 
-set PIP_NO_INDEX=
-python -m pip install lit
-
 cmake ^
   -G"NMake Makefiles" ^
   -DCMAKE_BUILD_TYPE=Release ^
